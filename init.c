@@ -68,9 +68,9 @@ int main() {
             }
 
             for (;args[1][i]!='=';i++) key[i]=args[1][i];
-            args[1][i]='\0';
-            for (i++;args[1][j];i++,j++) value[j]=args[1][i];
-            args[1][j]='\0';
+            key[i++]='\0';
+            for (;args[1][i];i++,j++) value[j]=args[1][i];
+            value[j]='\0';
             setenv(key,value,0);
             continue;
         }
